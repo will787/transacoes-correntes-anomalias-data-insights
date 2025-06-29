@@ -1,0 +1,12 @@
+python-bcb
+pandas
+numpy
+matplotlib
+plotly
+seaborn
+#nbformat>=4.2.0
+statsmodels
+statsforecast
+scikit-learn
+StandardScaler
+# Optional dependencies for advanced features or specific use cases can be added below.
