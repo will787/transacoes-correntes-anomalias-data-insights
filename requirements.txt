@@ -10,3 +10,4 @@ scikit-learn
 StandardScaler
 # Optional dependencies for advanced features or specific use cases can be added below.
 #nbformat>=4.2.0
+
