@@ -24,10 +24,10 @@ def consulting_insight(df):
         print(f"y value: {row_y}")
         response = client.models.generate_content(
                 model="gemini-2.5-flash",
-                contents=f"whats happening {row_date}, why this valuable is {row_y}?", 
+                contents=f"whats happening {row_date}, why this valuable is {row_y}, one summarize of this day and value about trade balance brazil?", 
                 config=types.GenerateContentConfig(system_instruction="You are specialist in topic of trade balance in brazil. " \
                 "I will send to you informations about trade balance days, explain to me whats happening in this days, look " \
-                "for anomalies and give me insights about it"),
+                "for anomalies and give me insights about it, please one summary per day."),  
             )
         
         appended.append({
@@ -36,7 +36,7 @@ def consulting_insight(df):
             'insights': response.text if response.candidates else "No insights found"
         })
     
-    return pd.DataFrame(appended, columns=['insights'])
+    return pd.DataFrame(appended)
 
 insights = consulting_insight(df)
 print(insights)
