@@ -25,11 +25,9 @@ def generate_insight(row, model):
     """
     Gera um insight para uma única linha do DataFrame usando a API do Gemini.
     """
-    # Formata a data para um padrão mais universal (YYYY-MM-DD)
     date_str = row['ds'].strftime('%Y-%m-%d')
     value = row['y']
     
-    # Um prompt mais estruturado pode gerar melhores resultados.
     prompt = (
         f"Na data de {date_str}, o valor da balança comercial foi {value}. "
         "Com base no seu conhecimento da economia brasileira, quais eventos ou fatores econômicos "
